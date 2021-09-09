@@ -222,15 +222,15 @@ html {
 }
 
 .slider-img1 {
-    background: url('/images/slider1.jpg') center / cover no-repeat;
+    background: url('../images/slider1.jpg') center / cover no-repeat;
 }
 
 .slider-img2 {
-    background: url('/images/slider2.jpg') center / cover no-repeat;
+    background: url('../images/slider2.jpg') center / cover no-repeat;
 }
 
 .slider-img3 {
-    background: url('/images/slider3.jpg') center / cover no-repeat;
+    background: url('../images/slider3.jpg') center / cover no-repeat;
 }
 
 
@@ -398,7 +398,7 @@ button:hover {
 
 #su-kien {
     height: 100vh;
-    background: url(/images/su-kien/sk-bg.jpg) center no-repeat;
+    background: url(../images/su-kien/sk-bg.jpg) center no-repeat;
 }
 
 .sk-t1 {
@@ -770,7 +770,7 @@ button:hover {
 
 #tin-tuc {
     height:100vh;
-    background: url(/images/su-kien/sk-bg.jpg) bottom no-repeat;
+    background: url(../images/su-kien/sk-bg.jpg) bottom no-repeat;
     z-index: 0;
 }
 
@@ -838,7 +838,7 @@ button:hover {
 
 #lien-he {
     height:100vh;
-    background: url(/images/su-kien/sk-bg.jpg) top right no-repeat;
+    background: url(../images/su-kien/sk-bg.jpg) top right no-repeat;
     z-index: 0;
 }
 
@@ -853,7 +853,7 @@ button:hover {
 }
 
 .lh-img {
-    background-image: url(/images/lien-he/lh-img.jpg);
+    background-image: url(../images/lien-he/lh-img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
