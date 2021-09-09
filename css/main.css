@@ -1,0 +1,939 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: #fff;
+}
+
+/* Header */
+
+.scroll-container {
+    display: flex;
+    width: 600vw;
+    height: 100vh;
+    background-color: #222d4f;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.menu-container {
+    padding: 24px;
+    width: 100vw;
+    z-index: 99;
+    position: fixed;
+    transition: all 0.2s;
+}
+
+.slideUp {
+    width: 100%;
+    background-color:#222d4f;
+    position: fixed;
+    padding: 0;
+    top: 0px;
+    left: 0px;
+    border-bottom-style: solid;
+    border-color: #fff;
+    border-bottom-width: thin;
+    transition: all .2s;
+}
+  
+.slideReturn {
+    width: 100%;
+    padding: 24px;
+    top: 0px;
+    left: 0px;
+    transition: all .1s;
+  }
+
+.col {
+    text-align: center;
+    /* background-color: #ccc; */
+    background-clip: content-box;
+  }
+  
+.logo {
+    max-width: 150px;
+    padding-top: 6px;
+    float: right;
+    
+}
+
+.menu-chinh li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.menu-chinh li a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 64px;
+    font-weight: 700;
+    
+}
+
+.menu-line {
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    background-color: #b6f842;
+    bottom: 35%;
+    transition: all .4s ease;
+    pointer-events: none;
+}
+
+.menu-line2 {
+    bottom: 30%;
+}
+
+.tim-kiem a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 62.06px;
+    font-size: 20px;
+}
+
+.tim-kiem a:hover {
+   color: #b6f842; 
+   transition: all .3s;
+}
+
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: none;
+    animation: fadein .2s;
+}
+
+.menu-doc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: #222d4f;
+    z-index: 100;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    transition: all 0.25s ease-out;
+}
+
+@keyframes menu-in {
+    to {left: 0};
+}
+
+/* Menu doc */
+
+.menu-doc-ico i {
+    font-size: 3vh;
+    line-height: 62.06px;
+    cursor: pointer;
+}
+
+.menu-doc-ico:hover i {
+    color: #b6f842; 
+    transition: all .3s;
+}
+
+.menu-doc-close {
+    font-size: 2em;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.menu-doc-close:hover {
+    color: #b6f842; 
+    transition: all .3s;
+}
+
+.menu-doc-list {
+    margin-top: 5em;
+}
+
+.menu-doc ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding-left: 3em;
+    line-height: 5em;
+    list-style: none;
+    transition: all 0.3s;
+}
+.menu-input{
+    display: none;
+}
+.menu-input:checked ~ .menu-overlay{
+    display: block;
+}
+
+.menu-input:checked ~ .menu-doc{
+    transform: translateX(0);
+}
+
+.menu-doc ul li a:hover {
+    padding-left: 6em;
+    transition: all 0.3s;
+    background-color:#b6f842;
+    color: #000;
+    font-weight: bold;
+}
+
+.menu-doc-list-item.ok{
+    padding-left: 6em;
+    background-color:#b6f842;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Slider */
+
+#slider {
+    height: 100vh;
+}
+
+.slider-bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.slider-bg.active {
+    opacity: 1;
+}
+
+.slider-img1 {
+    background: url('/images/slider1.jpg') center / cover no-repeat;
+}
+
+.slider-img2 {
+    background: url('/images/slider2.jpg') center / cover no-repeat;
+}
+
+.slider-img3 {
+    background: url('/images/slider3.jpg') center / cover no-repeat;
+}
+
+
+.overlay {
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(5, 20, 61, 0.7);
+}
+
+.slider-text {
+    display: none;
+}
+
+.slider-text img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation-name: fadein;
+    animation-duration: .5s;
+    display: none;
+}
+
+.slider-text span {
+    position: absolute;
+    top: 40vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation-name: upspan;
+    animation-duration: 1.3s;
+    font-size: 1.2vw;
+}
+
+.slider-text h1 {
+    position: absolute;
+    font-size: 4vw;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation-name: uph1;
+    animation-duration: 1.8s;
+}
+
+button {
+    padding: 3vh;
+    width: auto;
+    height: auto;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 1vw;
+    font-family: Monaco, Consolas;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #b6f842;
+    color: rgb(39, 39, 39);
+    border-color: #b6f842;
+}
+
+.slider-text button {
+    position: absolute;
+    top: 60vh;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    animation: fadein 1.8s ease .7s forwards;
+    opacity: 0;
+
+}
+
+.line-nut {
+    position: absolute;
+    top: 44vh;
+    left: 100vw;
+    width: 9vw;
+    height: .5px;
+    background-color: #fff;
+    animation: rightin .5s ease forwards;
+}
+
+.line-nut.nhi {
+    top: 48vh;
+}
+
+.line-nut.ba {
+    top: 52vh;
+}
+
+.slider-text button:hover{
+    background-color: #b6f842;
+    color: rgb(39, 39, 39);
+    border: 0px;
+}
+
+
+.slider-text.active {
+   display: block; 
+}
+
+@keyframes rightin {
+    to  {left: 91vw}
+}
+
+@keyframes fadein {
+    from  {opacity:0}
+    to  {opacity:1}
+}
+
+@keyframes uph1 {
+    from  {top:70%; opacity:0}
+    to  {top:50vh; opacity:1}
+}
+
+@keyframes upspan {
+    from  {top:60%; opacity:0}
+    to  {top:40vh; opacity:1}
+}
+
+.nut-chuyen {
+    position: absolute;
+    left: 91vw;
+    top: 42vh;
+
+}
+
+.chuyen {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.8vh;
+    line-height: 4vh;
+    transition: all .2s;
+}
+
+.chuyen:hover {
+    color: #b6f842;
+}
+
+.chuyen.active {
+    color: #fff;
+}
+
+/* Noi Dung */
+
+.scroll-page {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    background-color:#222d4f;
+}
+
+/* Su kien */
+
+.sk-t1 h1 {
+    display: none;
+}
+
+#su-kien {
+    height: 100vh;
+    background: url(/images/su-kien/sk-bg.jpg) center no-repeat;
+}
+
+.sk-t1 {
+    position:absolute;
+    font-size: 3.5vw;
+    top: 20vh;
+    left: 10vw;
+    text-shadow: 0 0 10px#222d4f85;
+}
+
+.sk-btn {
+    font-size: 1.5vw;
+    padding: 1.5vh 3vw 1.5vh 3vw;
+}
+
+.hinh-tron {
+    width: 30vw;
+    height: 60vh;
+    position: absolute;
+    top: 14.5vh;
+    left: 30vw;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    transition: .4s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.hinh-tron img {
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    width: 200%;
+    object-fit: contain;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.hinh-tron i {
+    position: absolute;
+    font-size: 4vw;
+    text-align: center;
+    top:50%;
+    right:0;
+    transform: translateY(-50%);
+    transition: .3s ease-in-out;
+
+}
+
+.next:hover{
+    color: #b6f842;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: .3s ease-in-out;
+}
+
+.hinh-tron:hover{
+    width: 60vw;
+    left: 30vw;
+    transition: .3s ease-out;
+    border-radius: 0;
+    border: 0;
+    box-shadow: 0px 0px 10vh rgba(0, 0, 0, 0.25);
+}
+
+.hinh-tron:hover img{
+    width: 150%;
+    opacity: 1;
+    transition: .3s ease;
+}
+
+.hinh-tron:hover ~.sk-t2{
+    opacity: 1;
+    bottom: 15vh;
+    transition: .4s ease-in-out;
+}
+
+.sk-t2 {
+    padding: 2vw;
+    position: absolute;
+    bottom: 20vh;
+    right: 6vw;
+    width: auto;
+    height: auto;
+    background: rgba(0, 0, 0, 0.7);
+    transition: .3s ease-in-out;
+    opacity: 0;
+}
+
+.sk-t2 h2{
+    font-size: 2vw;
+    padding-bottom: 2.2vh;
+}
+
+.sk-t2 p{
+    font-size: 1vw;
+}
+
+/* Videos */
+
+.vd-t1 {
+    position:absolute;
+    font-size: 6vh;
+    text-align: right;
+    top: 55vh;
+    right: 10vw;
+    text-shadow: 0 0 15px#222d4f85;
+    transition: 0.7s ease;
+}
+
+#player {
+    width: 100vw;
+    height: 100vh;
+}
+
+.show-vd {
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+::-webkit-scrollbar{
+    display: none;
+    
+}
+
+/* Tieu su */
+
+#tieu-su {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ts-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background: url(../images/su-kien/sk-bg.jpg) no-repeat;
+}
+
+.box {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70vh;
+}
+
+.box .inner {
+	width: 100vw;
+	height: 20vh;
+	line-height: 20vh;
+	font-size: 6.2vw;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.box .inner:first-child {
+    color: #fff;
+    border: 2px solid #fff;
+    justify-content: center;
+	transform-origin: right;
+	transform: perspective(20vw) rotateY(-25deg);
+    border-left: 0;
+    border-right: 1px solid #fff;
+}
+
+.box .inner:last-child {
+	/* background-color: #222d4f; */
+    border: 2px solid #fff;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    border-right: 0;
+    border-left: 1px solid #fff;
+    color: transparent;
+	transform-origin: left;
+	transform: perspective(20vw) rotateY(25deg);
+}
+
+.box .inner span {
+	position: absolute;
+	animation: marquee 7s linear infinite;
+}
+
+.box .inner:first-child span {
+	animation-delay: 2.4s;
+	left: -150%;
+}
+
+.box .inner:first-child span:first-child {
+	animation-delay: 5.9s;
+	left: -150%;
+}
+
+.box .inner:last-child span:first-child {
+	animation-delay: 3.5s;
+	left: -150%;
+}
+
+.ts-tv {
+    position: absolute;
+    height: 40vh;
+    width: 20vw;
+    top: 20vh;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.cross {
+    position: absolute;
+    background: #fff;
+    display: block;
+    width: 60%;
+    height: 2px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+.cross2  {
+    -webkit-transform: rotate(45deg);    
+    transform: rotate(45deg);
+    cursor: pointer;
+
+}
+
+.cross-move  {
+    width: 4vw;
+    height: 10px;
+    left: 70vw;
+    top: -30vh;
+    transform: rotate(-360deg);
+    background-color: #222d4f;
+}
+
+.cross-return {
+    width: 60%;
+    left: 0;
+    top: 0;
+}
+
+.ts-tv.tv1 {
+    left: 10vw;
+}
+
+.ts-tv.tv2 {
+    left: 40vw;
+
+}
+
+.ts-tv.tv3 {
+    left: 70vw;
+
+}
+
+.ts-tv-info {
+    position: absolute;
+    left: 10px;
+}
+
+.ts-tv-info h3 {
+    font-size: 1em;
+    
+}
+
+.ts-tv-info p {
+    font-size: .5em;
+    width: 18vw;
+    text-align: justify;
+    padding-top: 1.2em;
+}
+
+.ts-tv-info.active {
+    left: 50vw;
+    top: 20vh;
+    color: #222d4f;
+    transition: all 0.5s;
+    transform: scale(2);
+}
+
+@keyframes marquee {
+	from {
+		left: 150%;
+	}
+
+	to {
+		left: -150%;
+	}
+}
+
+/* Show thanh vien */
+
+.tv-showIn {
+    left: 10hw;
+    background-color: #fff;
+    cursor: default;
+    -webkit-animation-name: showTvIn;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: showTvIn;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    z-index: 100;
+}
+
+.tv-showOut {
+    left: 10hw;
+    -webkit-animation-name: showTvOut;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: showTvOut;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showTvIn {
+    100% {
+        width: 80vw;
+    }
+}
+
+@keyframes showTvOut {
+    from {
+        width: 80vw;
+    }
+    to {
+        width: 20vw;
+    }
+}
+
+.return {
+    border-radius: 50%;
+    width: 20vw;
+    transition: all .5s
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: .5s;
+    animation-name: fade;
+    animation-duration: .5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  /* Tin tuc */
+
+#tin-tuc .overlay {
+    z-index: -1;
+}  
+
+#tin-tuc {
+    height:100vh;
+    background: url(/images/su-kien/sk-bg.jpg) bottom no-repeat;
+    z-index: 0;
+}
+
+.tt-main {
+    padding: 15vh 10vw 5vh 10vw;
+    height: 100vh;
+    overflow: scroll;
+    z-index: 99;
+}
+
+.tt-img {
+    /* width: 100%; */
+    height: 25vh;
+    background-color: burlywood;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.tt-box:hover .tt-img {
+    opacity: .5;
+    transition: all 0.5s;
+}
+
+.tt-box {
+    margin-top: 3vh;
+    background-color: #222d4f;
+    height: 50vh;
+    overflow: scroll;
+}
+
+.tt-text h2 {
+    cursor: pointer;
+}
+
+.tt-box:hover h2 {
+    cursor: pointer;
+    color: #b6f842;
+    transition: all 0.2s;
+}
+
+.tt-text {
+    padding: 2vh;
+    width: 100%;
+    text-align: left;
+}
+
+.tt-text h3 {
+    padding-top: 1vh;
+    color: rgb(126, 126, 126);
+    font-size: 1em;
+}
+
+.tt-text p {
+    padding-top: 2vh;
+    font-size: 1em;
+}
+
+/* Lien he */
+
+#lien-he .overlay {
+    z-index: -1;
+}  
+
+#lien-he {
+    height:100vh;
+    background: url(/images/su-kien/sk-bg.jpg) top right no-repeat;
+    z-index: 0;
+}
+
+.lh-main {
+    padding: 15vh 10vw 15vh 10vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.lh-form {
+    background-color: #222d4f;
+}
+
+.lh-img {
+    background-image: url(/images/lien-he/lh-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.lh-form .col {
+    text-align: left;
+
+    width: 100%;
+}
+
+.lh-form button {
+    font-size: 1.2em;
+    min-width: 10vw;
+}
+
+.lh-form span{
+    font-weight: bold;
+    font-size: .9em;
+}
+
+.lh-form-control {
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.651);
+    background-color: transparent;
+    color:#fff;
+    line-height: 3;
+    font-size: 1em;
+}
+
+.lh-form-control option {
+    color: black;
+    padding-top:50px;
+}
+
+.lh-form-control:focus {
+    outline: none;
+}
+
+.select-op {
+    padding-top:40px;
+}
+
+.lh-main .row {
+    padding: 30px;
+
+}
+
+.col-control {
+    display: block;
+}
+
+.lh-title {
+    text-align: center;
+    height: 10vh;
+    margin: 0;
+}
+
+/* To top button */
+#myBtn {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 999;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    background-color: #b6f842;
+    color: #222d4f;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 0;
+    transition: all .2s;
+  }
+  
+  #myBtn:hover {
+    background-color: #222d4f;
+    color: white;
+  }

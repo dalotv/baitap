@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJMIX</title>
+    <!-- Thu vien grid -->
+    <link rel="stylesheet" href="./css/grid.css">
+    <!-- Thu vien css -->
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="./fonts/icofont/icofont.css">
+    <!-- Animated -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Fav Icon -->
+    <link rel="icon" href="./images/fav-ico.png">
+    
+</head>
+<body>
+    <div class="scroll-container" id="scroll">
+        <!-- Trang chu -->
+        <div class="header scroll-page ok">
+            <input type="checkbox" class ="menu-input" id="menu-doc-input">
+            <label for="menu-doc-input" class="menu-overlay"></label>
+            <div class="menu-doc">
+                <label for="menu-doc-input" class="menu-doc-close">
+                    <i class="icofont-close"></i>
+                </label for="menu-doc-input">
+                <div class="menu-doc-list">
+                    <ul>
+                        <li>
+                            <a class="menu-doc-list-item ok" href="#">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a class="menu-doc-list-item" href="#">Sự kiện</a>
+                        </li>
+                        <li>
+                            <a class="menu-doc-list-item" href="#">Videos</a>
+                        </li>
+                        <li>
+                            <a class="menu-doc-list-item" href="#">Tiểu sử</a>
+                        </li>
+                        <li>
+                            <a class="menu-doc-list-item" href="#">Tin tức</a>
+                        </li>
+                        <li>
+                            <a class="menu-doc-list-item" href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid menu-container">
+                <div class="row test">
+                    <div class="col l-2 m-6 c-6">
+                        <label for="menu-doc-input" class="menu-doc-ico">
+                            <i class="icofont-navigation-menu"></i>
+                        </label>
+
+                        <img class = "logo" src="./images/logo-default-324x112.png" alt=""/>
+                    </div>
+                    <div class="col l-8 m-0 c-0">
+                        <ul class="menu-chinh">
+                            <li class="menu-text ok">
+                                <a href="#">Trang chủ</a>
+                            </li>
+                            <li class="menu-text">
+                                <a href="#">Sự kiện</a>
+                            </li>
+                            <li class="menu-text">
+                                <a href="#">Videos</a>
+                            </li>
+                            <li class="menu-text">
+                                <a href="#">Tiểu sử</a>
+                            </li>
+                            <li class="menu-text">
+                                <a href="#">Tin tức</a>
+                            </li>
+                            <li class="menu-text">
+                                <a href="#">Liên hệ</a>
+                            </li>
+                            <div class="menu-line"></div>
+                            <div class="menu-line menu-line2"></div>
+                        </ul>     
+                    </div>
+                    <div class="col l-2 m-6 c-6 tim-kiem">
+                        <a href="">
+                            <i class="icofont-search-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div id="slider">
+            <div class="slider-bg slider-img1 active"></div>
+            <div class="slider-bg slider-img2"></div>
+            <div class="slider-bg slider-img3"></div>
+            <div class="overlay"></div>
+            <div class="slider-text active">
+                <span>MỘT SỐ CA KHÚC MỚI CỦA TÔI</span>
+                <h1>Âm nhạc khác biệt</h1>
+                <button>Tìm hiểu thêm</button>
+                <div class="line-nut"></div>
+            </div>
+            <div class="slider-text">
+                <span>CHƠI NHẠC BẰNG CẢ ĐAM MÊ</span>
+                <h1>Top #10 ban nhạc</h1>
+                <button href="">Tìm hiểu thêm</button>
+                <div class="line-nut nhi"></div>
+            </div>
+            <div class="slider-text">
+                <span>KHÔNG CHỈ LÀ TÌNH YÊU</span>
+                <h1>Âm nhạc là lẽ sống</h1>
+                <button href="">Tìm hiểu thêm</button>
+                <div class="line-nut ba"></div>
+            </div>
+            <div class="nut-chuyen">
+                <a class="chuyen active" onclick="sliderChange1()" href="#">
+                    <i class="icofont-ui-press"></i><br>
+                </a>
+                <a class="chuyen" onclick="sliderChange2()" href="#">
+                    <i class="icofont-ui-press"></i><br>
+                </a>
+                <a class="chuyen" onclick="sliderChange3()" href="#">
+                    <i class="icofont-ui-press"></i>  
+                </a>
+            </div> 
+        </div>
+
+        <!-- Su Kien -->
+        <div id="su-kien" class="scroll-page">
+            <div class="overlay"></div>
+            <div class="hinh-tron">
+                <img src="./images/su-kien/sk-show.jpg"  class="sk-Slides fade">
+                <img src="./images/su-kien/sk-show2.jpg" class="sk-Slides fade">
+                <img src="./images/su-kien/sk-show3.jpg" class="sk-Slides fade">
+                <img src="./images/su-kien/sk-show4.jpg" class="sk-Slides fade">
+                <i class="icofont-thin-double-right next" onclick="plusSlides(1)"></i>
+            </div>
+            <div class="sk-t1">
+                <h1 class="animate__bounceIn">Giảm giá<br>hôm nay</h1>
+                <button class="sk-btn">Đặt vé ngay</button>
+            </div>      
+
+            <div class="sk-t2 fade">
+                <h2>Đại nhạc hội thế giới hệ nước</h2>
+                <p>
+                    Đà Nẵng khởi động Đề án Xây dựng Đà Nẵng - Thành phố môi trường <br>
+                    bằng chương trình Đại nhạc hội thế giới nước “Nước - Hồi sinh” <br>
+                    được tổ chức ấn tượng tại Nhà hát Trưng Vương tối 29-4.
+                </p>
+            </div>      
+            <div class="sk-t2 fade">
+                <h2>Đại nhạc hội thế giới hệ lửa</h2>
+                <p>
+                    Đà Nẵng khởi động Đề án Xây dựng Đà Nẵng - Thành phố môi trường <br>
+                    bằng chương trình Đại nhạc hội thế giới nước “Nước - Hồi sinh” <br>
+                    được tổ chức ấn tượng tại Nhà hát Trưng Vương tối 29-4.
+                </p>
+            </div> 
+            <div class="sk-t2 fade">
+                <h2>Đại nhạc hội thế giới hệ băng</h2>
+                <p>
+                    Sự tái xuất của huyền thoại làng nhạc Mỹ Barry Manilow đã không thành <br>
+                    công như mong đợi khi cơn bão Henri vừa đổ bộ “đánh bật” chương trình <br>
+                    đại nhạc hội gồm các siêu sao xứ cờ hoa ở New York sau dịch Covid-19.
+                </p>
+            </div> 
+            <div class="sk-t2 fade">
+                <h2>Đại nhạc hội thế giới hệ cây</h2>
+                <p>
+                    Đà Nẵng khởi động Đề án Xây dựng Đà Nẵng - Thành phố môi trường <br>
+                    bằng chương trình Đại nhạc hội thế giới nước “Nước - Hồi sinh” <br>
+                    được tổ chức ấn tượng tại Nhà hát Trưng Vương tối 29-4.
+                </p>
+            </div>  
+        </div>
+
+        <!-- Videos -->
+        <div id="videos" class="scroll-page">
+            <div class="overlay show-vd"></div>
+            <div class="vd-t1">
+                <h1 class = "animate__animated animate__fadeInUp">Show diễn<br>hay nhất<br></h1>
+            </div> 
+            <div id="player" control= "0"></div>
+            </iframe>
+        </div>
+
+        <!-- Tieu su -->
+        <div id="tieu-su" class="scroll-page">
+            <div class="ts-bg"></div>
+            <div class="overlay ts-overlay"></div>
+            <div class="box">
+                <div class="inner">
+                  <span>CHÚNG TÔI LÀ DJ MIX</span>
+                  <span>CHÚNG TÔI LÀ DJ MIX</span>
+                </div>
+                <div class="inner">
+                  <span>CHÚNG TÔI LÀ DJ MIX</span>
+                  <span>CHÚNG TÔI LÀ DJ MIX</span>
+                </div>
+            </div>
+            <div class="ts-tv tv1">
+                <div class="ts-tv-info">
+                    <h2>Mr. Quy Tran</h2>
+                    <h3>Đạo diễn</h3>
+                    <p>Nhiều tổ chức cá nhân ngày càng sử dụng các chuyên gia được đào tạo chính thức bài bản về báo chí, truyền thông, quan hệ công chúng và quan hệ công trong vai trò là Người phát ngôn.</p>
+                </div>
+                <div class="cross"></div>
+                <div class="cross cross2"></div>     
+            </div>
+            <div class="ts-tv tv2 ">
+                <div class="ts-tv-info">
+                    <h2>Mrs. Lan Tran</h2>
+                    <h3>Sản xuất</h3>
+                    <p>Tình yêu giúp ta vượt lên những suy nghĩ tầm thường. Và đưa chúng ta tới những suy nghĩ tầm bậy.</p>
+                </div>
+                <div class="cross"></div>
+                <div class="cross cross2"></div>
+            </div>
+            <div class="ts-tv tv3">
+                <div class="ts-tv-info">
+                    <h2>Mr. Hoang Long</h2>
+                    <h3>Giám đốc</h3>
+                    <p>Theo dân gian và nghiên cứu mới nhất của các nhà tâm linh học thì vào lúc 12 giờ đêm, nếu có một con mèo đen đi ngang qua bạn thì điều đó có nghĩa là nó đang đi đâu đó.</p>
+                </div>
+                <div class="cross"></div>
+                <div class="cross cross2"></div>
+            </div>
+        </div>
+
+        <!-- Tin tuc -->
+        <div id="tin-tuc" class="scroll-page">
+            <div class="overlay"></div>
+            <div class="grid">
+                <div class="row tt-main">
+                    <div class="col l-4 m-4 c-6 tt-box">
+                        <div class="tt-img" style="background-image: url('/images/tin-tuc/tt-img1.jpg');"></div>
+                        <div class="tt-text">
+                            <h2>Zedd Hợp Tác Cùng Riot Games Trong Một Dự Án Đặc Biệt Quảng Bá Game Valorant</h2>
+                            <h3>08 tháng 09,2021</h3>
+                            <p>Riot Games - studio đình đám đứng sau thành công của League Of Legend mới đây đã ra mắt dự án hợp tác đặc biệt mới với Zedd trong Valorant</p>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-4 c-6 tt-box">
+                        <div class="tt-img" style="background-image: url('/images/tin-tuc/tt-img2.jpg');"></div>
+                        <div class="tt-text">
+                            <h2>Drake Chính Thức Phát Hành Album Phòng Thu Thứ 6 “Certified Lover Boy”</h2>
+                            <h3>04 tháng 09,2021</h3>
+                            <p>Một trong những album được mong chờ nhất năm 2021 đã chính thức được phát hành và sớm phá vỡ các kỷ lục trên các nền tảng nghe nhạc trực tuyến.</p>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-4 c-6 tt-box">
+                        <div class="tt-img" style="background-image: url('/images/tin-tuc/tt-img3.jpg');"></div>
+                        <div class="tt-text">
+                            <h2>Lý Do Khiến Bộ Đôi Daft Punk Trở Thành Robot</h2>
+                            <h3>24 tháng 08,2021</h3>
+                            <p>Daft Punk - cặp đôi DJ người Pháp với trang phục như những người máy đã trở thành một biểu tượng in sâu trong tâm trí những người yêu thích âm nhạc điện tử.</p>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-4 c-6 tt-box">
+                        <div class="tt-img" style="background-image: url('/images/tin-tuc/tt-img4.jpg');"></div>
+                        <div class="tt-text">
+                            <h2>[GIVEAWAY] 5 Vé Xem Eptic Tại Headbangers: Back To Da Bass!</h2>
+                            <h3>07 tháng 03,2018</h3>
+                            <p>Tham gia ngay chương trình giveaway của Loop Central để có cơ hội được nhận vé tham dự đêm nhạc Headbangers: Back To Da Bass cùng DJ / Producer Dubstep người Bỉ, Eptic tại Hero Bar, Hà Nội!</p>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-4 c-6 tt-box">
+                        <div class="tt-img" style="background-image: url('/images/tin-tuc/tt-img5.jpg');"></div>
+                        <div class="tt-text">
+                            <h2>HOT PANDA MEDIA RA MẮT LABEL NHẠC ĐIỆN TỬ MANG TÊN XICHLO RECORDS</h2>
+                            <h3>03 tháng 09,2021</h3>
+                            <p>Vào ngày 2/9 vừa qua, Hot Panda Media đã chính thức ra mắt label nhạc điện tử mới nhất của mình mang tên Xichlo Records.</p>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-4 c-6 tt-box">
+                        <div class="tt-img" style="background-image: url('/images/tin-tuc/tt-img6.jpg');"></div>
+                        <div class="tt-text">
+                            <h2>Sự Đột Phá Và Mạo Hiểm Trong Sáng Tạo Âm Nhạc Của Halsey</h2>
+                            <h3>05 tháng 09,2021</h3>
+                            <p>Sau khi gặt hái được những thành công nhất định từ album phòng thu thứ ba “Manic” vào năm 2020, Halsey quay trở lại với concept album “If I Can’t Have Love, I Want Power” và nhận được nhiều đánh giá tích cực.</p>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-4 c-6 tt-box">
+                        <div class="tt-img" style="background-image: url('/images/tin-tuc/tt-img7.jpg');"></div>
+                        <div class="tt-text">
+                            <h2>K/DA - Từ Nhân Vật Game Trở Thành Thần Tượng K-pop</h2>
+                            <h3>27 tháng 08,2021</h3>
+                            <p>Nhóm nhạc K-pop ảo K/DA đã trở thành một hiện tượng có tác động to lớn với cộng đồng người chơi League Of Legends cũng như cộng đồng K-Pop trên toàn thế giới.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lien-he" class="scroll-page">
+            <div class="overlay"></div>
+            <div class="grid">
+                <div class="row lh-main">
+                    <div class="col l-7 lh-form">
+                        <div class="row lh-form-nd">
+                            <div class="col l-12">
+                                <div class="row lh-title">
+                                    <h1>Liên hệ với chúng tôi</h1>
+                                </div>
+                                <div class="row">
+                                    <div class="col l-6 col-control">
+                                        <span>HỌ VÀ TÊN</span>
+                                        <input class="lh-form-control" type="text">
+                                    </div>
+                                    <div class="col l-6 col-control">
+                                        <span>ĐỊA CHỈ EMAIL</span>
+                                        <input class="lh-form-control" type="text">
+                                    </div>
+                                        
+                                </div>
+                                <div class="row">
+                                    <div class="col l-12 col-control">
+                                        <span>NGHỀ NGHIỆP</span>
+                                        <select class="lh-form-control select-op" id="country" name="country ">
+                                            <option ></option>
+                                            <option >Sinh viên</option>
+                                            <option >Kỹ sư âm thanh</option>
+                                            <option >Nghệ sĩ</option>
+                                            <option >Đạo diễn</option>
+                                          </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col l-12 col-control">
+                                        <span>TIN NHẮN</span>
+                                        <textarea style="height:100px" class="lh-form-control" type="text"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                   <div class="col l-12 col-control">
+                                       <button>Gửi</button>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col l-5 lh-img"></div>
+                </div>
+            </div>
+        </div>
+        <button onclick="topFunction()" id="myBtn" title="Lên đầu trang">
+            <i class="icofont-arrow-up"></i>
+        </button>
+    </div>
+    <!-- JS -->
+    <script src="./js/main.js"></script>
+    <!-- Top Button -->
+</body>
+</html>
